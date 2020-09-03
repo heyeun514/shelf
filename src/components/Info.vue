@@ -88,13 +88,19 @@ export default {
 }
 </script>
 <style>
+.info {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
 .clock
 {
+  bottom: 0;
+  margin: 0 20px 0 0;
   width: 495px;
   height: 475px;
-  left: 218px;
-  top: 1026px;
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -171,11 +177,10 @@ export default {
 }
 .air
 {
+  margin: 0 20px;
   width: 331px;
   height: 428px;
   left: 766px;
-  top: 1073px;
-  position: absolute;
   display: flex;
   background: rgb(252,132,79);
   filter: drop-shadow(0px 8px 8px rgba(0,0,0,.3))
@@ -203,11 +208,10 @@ export default {
 
 .weather
 {
+  margin: 0 0 0 20px;
   width: 413px;
   height: 294px;
   left: 1141px;
-  top: 1207px;
-  position: absolute;
   display: flex;
   overflow: hidden;
   background: rgb(136,206,239);

@@ -1,13 +1,15 @@
 <template>
-    <div class="shelf-plate">
-        
-            <div class="line" v-bind:style="{ width: lineWidth + 'px' }"></div>
-            <div class="shadow" v-bind:style="{ left: 0 + 'px', 
+    <div class="shelf-plate"
+        v-bind:style="{width: lineWidth+'px', height: contentHeight+'px'}">
+            <slot></slot>
+            <div class="line"
+                v-bind:style="{ width: parseInt(lineWidth) + 60 + 'px' }"></div>
+            <div class="shadow" v-bind:style="{
                                 transform: 'skew(20deg)',
+                                bottom: -shadowHeight + 'px',
                                 height: shadowHeight + 'px',
-                                width: lineWidth + 'px'}"></div>
+                                width: parseInt(lineWidth) + 60 + 'px'}"></div>
     </div>
-        
 </template>
 <script>
 function degrees_to_radians(degrees)
@@ -28,6 +30,10 @@ export default {
         shadowHeight: {
             type: Number,
             default: 100,
+        },
+        contentHeight: {
+            type: Number,
+            default: 500
         }
     },
     data: () => {
@@ -43,11 +49,14 @@ export default {
 <style>
 .shelf-plate {
     position: absolute;
+    display: flex;
 }
 
 .shelf-plate > .line {
     position: absolute;
     background-color: white;
+    left: -30px;
+    bottom: 0;
     height: 3px;
 }
 
@@ -55,6 +64,7 @@ export default {
     position: absolute;
     background: linear-gradient(#000000, #ffffff00);
     opacity: 0.3;
+    left: -30px;
     transform-origin: 50% 0%;
 }
 </style>

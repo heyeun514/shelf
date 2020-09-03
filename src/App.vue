@@ -169,12 +169,14 @@ body.bg_fabric {
 }
 
 #app {
-  /*transform: scale(0.9) translateY(120px);*/
+  transform: scale(0.86, 0.869) translate(0, 276px);
   position: fixed;
-  left: 262px;
-  top: 276px;
-  width: 3321px;
-  height: 1879px;
+  /* left: 262px; */
+  /* top: 276px; */
+  width: 100%;
+  height: 100%;
+  /* width: 3321px; */
+  /* height: 1879px; */
   /* overflow: hidden; */
 }
 

@@ -4,9 +4,27 @@
             ref="shelfUI"
             v-bind:source="require('@/assets/video/Shelf_UI_2-0_final.mp4')">
         </Video>-->
-        <Info></Info>
-        <Plate class="info-plate"></Plate>
-        <Plate></Plate>
+        <Plate id="plate-01" lineWidth=1320>
+            <Info></Info>
+        </Plate>
+        <Plate id="plate-02" lineWidth=916 contentHeight=1376>
+            <ShelfPhoto
+            id="photo1"
+            class="shelf-photo"
+            v-bind:src="require('@/assets/photo1_01.jpg')"></ShelfPhoto>
+        </Plate>
+        <Plate id="plate-03" lineWidth=612 contentHeight=815>
+            <ShelfPhoto
+                id="photo2"
+                class="shelf-photo"
+                v-bind:src="require('@/assets/photo2_01.png')"></ShelfPhoto>
+        </Plate>
+        <Plate id="plate-04" lineWidth=689 contentHeight=448>
+            <ShelfPhoto
+            id="photo3"
+            class="shelf-photo"
+            v-bind:src="require('@/assets/photo3_01.gif')"></ShelfPhoto>
+        </Plate>
         <video ref="horizontalVideo"
             v-bind:class="horizontalVideoClass"
             loop mute
@@ -27,6 +45,7 @@
 // import Video from '@/components/Video.vue'
 import Plate from '@/components/Plate.vue'
 import Info from '@/components/Info.vue'
+import ShelfPhoto from '@/components/ShelfPhoto.vue'
 
 var getMobile;
 const VIDEO_STATUS = {
@@ -41,7 +60,8 @@ export default {
     components: {
         // Video,
         Plate,
-        Info
+        Info,
+        ShelfPhoto
     },
     data() {
         return {
@@ -146,10 +166,10 @@ export default {
 }
 </script>
 <style>
-    .displayShelf {
-        width: 100%;
-        height: 100%;
-    }
+.displayShelf {
+    width: 100%;
+    height: 100%;
+}
 .verticalVideo {
     position: absolute;
     right: 0px;
@@ -198,7 +218,32 @@ export default {
 }
 
 .info-plate {
-    top: 100px;
+    position: absolute;
+}
+
+.shelf-photo {
+    position: absolute;
+    filter: drop-shadow(0px 8px 8px rgba(0,0,0,.3));
+}
+
+#plate-01 {
+    top: 1026px;
+    left: 318px;
+}
+
+#plate-02 {
+    top: 357px;
+    left: 2785px;
+}
+
+#plate-03 {
+  left: 1882px;
+  top: 1178px;
+}
+
+#plate-04 {
+  left: 1375px;
+  top: 188px;
 }
 
 @keyframes toLeft {
